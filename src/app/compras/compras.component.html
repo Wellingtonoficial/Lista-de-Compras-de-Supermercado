@@ -1,0 +1,34 @@
+<div class="lista-de-compras">
+  <form (ngSubmit)="adicionarItem()">
+    <input [(ngModel)]="novoItem" name="item" placeholder="Novo item" required>
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <!-- Itens Não Comprados -->
+  <h2>Itens a Comprar</h2>
+  <ul>
+    <li *ngFor="let item of itensNaoComprados">
+      <span>{{ item.nome }}</span>
+      <button (click)="marcarComoComprado(item)">
+        {{ item.comprado ? 'Não Comprado' : 'Comprado' }}
+      </button>
+      <button (click)="excluirItem(item)">
+        🗑️ <!-- Ícone de lixeira -->
+      </button>
+    </li>
+  </ul>
+
+  <!-- Itens Comprados -->
+  <h2>Itens Comprados</h2>
+  <ul>
+    <li *ngFor="let item of itensComprados">
+      <span>{{ item.nome }}</span>
+      <button (click)="marcarComoComprado(item)">
+        {{ item.comprado ? 'Não Comprado' : 'Comprado' }}
+      </button>
+      <button (click)="excluirItem(item)">
+        🗑️ <!-- Ícone de lixeira -->
+      </button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,57 @@
+.lista-de-compras {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+input {
+  flex-grow: 1;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+button {
+  margin-left: 10px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+li .comprado {
+  text-decoration: line-through;
+  color: gray;
+}
+
+@media (max-width: 600px) {
+  .lista-de-compras {
+    padding: 5px;
+  }
+
+  button {
+    padding: 0.5em;
+    font-size: 0.9em;
+  }
+
+  input {
+    font-size: 0.9em;
+  }
+}
