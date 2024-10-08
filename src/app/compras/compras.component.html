@@ -1,7 +1,7 @@
 <div class="lista-de-compras">
   <form (ngSubmit)="adicionarItem()">
-    <input [(ngModel)]="novoItem" name="item" placeholder="Novo item" required>
-    <button type="submit">Adicionar</button>
+    <input class="caixa-form" [(ngModel)]="novoItem" name="item" placeholder="Novo item" required>
+    <button  type="submit">Adicionar</button>
   </form>
 
   <!-- Itens Não Comprados -->
@@ -9,10 +9,12 @@
   <ul>
     <li *ngFor="let item of itensNaoComprados">
       <span>{{ item.nome }}</span>
-      <button (click)="marcarComoComprado(item)">
+      <button class="compre-naoCompre" (click)="marcarComoComprado(item)"
+        [ngStyle]="{ 'background-color': item.comprado ? 'rgb(48, 195, 139)' : 'red', 'color': 'white' }">
         {{ item.comprado ? 'Não Comprado' : 'Comprado' }}
-      </button>
-      <button (click)="excluirItem(item)">
+    </button>
+
+      <button class="iconlixeita" (click)="excluirItem(item)">
         🗑️ <!-- Ícone de lixeira -->
       </button>
     </li>
@@ -23,10 +25,11 @@
   <ul>
     <li *ngFor="let item of itensComprados">
       <span>{{ item.nome }}</span>
-      <button (click)="marcarComoComprado(item)">
+      <button class="compre-naoCompre" (click)="marcarComoComprado(item)"
+      [ngStyle]="{ 'background-color': item.comprado ? 'rgb(48, 195, 139)' : 'red', 'color': 'white' }">
         {{ item.comprado ? 'Não Comprado' : 'Comprado' }}
       </button>
-      <button (click)="excluirItem(item)">
+      <button class="iconlixeita" (click)="excluirItem(item)">
         🗑️ <!-- Ícone de lixeira -->
       </button>
     </li>
